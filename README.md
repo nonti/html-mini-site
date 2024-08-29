@@ -1,4 +1,4 @@
-# html-mini-site
+
 # HTML Beginner Exercise 
 
 This project demonstrates a simple HTML website that includes a contact form to send emails using the EmailJS service. It contains a basic layout with a heading, a list of familiar technologies, a list of technologies to learn, useful links, and a form for contacting the developer. 

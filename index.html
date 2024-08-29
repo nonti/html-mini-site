@@ -1,25 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>HTML Beginner Exercise by Nontombi Mbowane</title>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "ySbfhYZC2uPWKP_IC",
+      });
+   })();
+</script>
 </head>
 <body>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
 
-  <ol>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ol>
+  <div class="heading">
+    <h1>HTML Beginner Exercise by Nontombi Mbowane</h1>
+  </div>
+  <div class="container">
+    <div class="box">
+      <span></span>
+      <div class="content">
+        <h1>Faimiliar with: </h1>
+        <ul>
+          <li>JavaScript</li>
+          <li>HTML5</li>
+          <li>CSS</li>
+          <li>Java</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box">
+      <span></span>
+      <div class="content image">
+        <h4>To know more about the person who developed this website</h4>
+        <form id="form" onsubmit="sendEmail(); return false;">
+            <label for="name">First Name:</label><br>
+            <input type="text" id="name" name="name"/><br>
+            <label for="name">Email:</label><br>
+            <input type="email" id="email" name="email"/><br>
+            <label for="message">Message:</label><br>
+            <input type="text" id="message" name="message" /><br>
+            <button type="submit">Send</button>
+          </form>
+          <script>
+            function sendEmail(){
+              const messageParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+              };
+              emailjs.send('service_dyowrpl', 'template_kicjyez', messageParams)
+              .then(function(response){
+                console.log('Success!', response.status, response.text);
+                document.getElementById('form').reset();
+                alert('Message sent successfully!');
+              }, function(error){
+                alert('Message sending failed. Please try again.');
+              });
+            }
+          </script>
+      </div>
+    </div>
+    <div class="box">
+      <span></span>
+      <div class="content">
+        <h2>Still to learn</h2>
+        <ol>
+          <li>Ruby</li>
+          <li>Python</li>
+          <li>NextJS</li>
+          <li>Tailwind</li>
+        </ol>
+      </div>
+    </div>
 
-  <
+    <div class="box">
+      <span></span>
+      <div class="content">
+        <h1>Useful Links:</h1>
+        <a href="https://www.google.com" target="_blank">Google</a><br />
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a><br />
+        <a href="https://www.github.com" target="_blank">GitHub</a><br />
+      </div>
+    </div>
+  </div>
+  <p class="phrase">In order to be <strong>irreplaceable</strong>, one must always be <em>different</em></p>
+  <div class="image">
+    <a href="https://www.france.fr/en/destination/paris/">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPK7gzVvAp5IQtgW5OUuTUDyfVZSMU5RvxKQ&s"/></a>
+    <a href="https://www.touropia.com/ten-wonders-of-the-world/">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTljb1uK6h2vf31NQVKZDyQizJ6Ped9pRJVMA&s"/></a>
+  </div>
 </body>
 </html>

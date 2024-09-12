@@ -38,33 +38,8 @@
     <div class="box">
       <span></span>
       <div class="content image">
-        <h4>To know more about the person who developed this website</h4>
-        <form id="form" onsubmit="sendEmail(); return false;">
-            <label for="name">First Name:</label><br>
-            <input type="text" id="name" name="name"/><br>
-            <label for="name">Email:</label><br>
-            <input type="email" id="email" name="email"/><br>
-            <label for="message">Message:</label><br>
-            <input type="text" id="message" name="message" /><br>
-            <button type="submit">Send</button>
-          </form>
-          <script>
-            function sendEmail(){
-              const messageParams = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-              };
-              emailjs.send('service_dyowrpl', 'template_kicjyez', messageParams)
-              .then(function(response){
-                console.log('Success!', response.status, response.text);
-                document.getElementById('form').reset();
-                alert('Message sent successfully!');
-              }, function(error){
-                alert('Message sending failed. Please try again.');
-              });
-            }
-          </script>
+        <h1>Send email</h1>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nonty@gmail.com" target="_blank">Click here</a>
       </div>
     </div>
     <div class="box">
